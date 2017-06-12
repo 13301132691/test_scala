@@ -1,3 +1,8 @@
+package example
+
+/**
+  * Created by Administrator on 2017/6/12.
+  */
 class Rational(x: Int, y: Int){
   def numer = x
   def denom = y
@@ -23,7 +28,6 @@ class Rational(x: Int, y: Int){
   def div(r: Rational): Rational = {
     val numer_new = numer * r.denom
     val denom_new = denom * r.numer
-    if(denom_new==0) throw new IllegalArgumentException("0 cannot be divided")
     gcd(numer_new, denom_new)
   }
 
@@ -41,7 +45,10 @@ class Rational(x: Int, y: Int){
     gcd = math.abs(gcd)
     new Rational(x/gcd,y/gcd)
   }
+
+  def main(args: Array[ String ]) {
+    val r = new Rational(1,2)
+    val s = new Rational(0,3)
+    print(r.div(s))
+  }
 }
-  val r = new Rational(1,2)
-  val s = new Rational(0,3)
- r.div(s)

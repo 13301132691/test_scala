@@ -38,6 +38,7 @@ class Rational(x: Int, y: Int) {
 }
 
 object Rational extends App {
+  implicit def intToRational(n:Int):Rational= new Rational(n)
   val r = new Rational(1, 2)
   val s = new Rational(1, 4)
   println(r max s)
@@ -47,10 +48,12 @@ object Rational extends App {
   println(r-s)
   println(r*s)
   println(r.gcd(-1,10))
+  println(2*r)
   val d = new Rational(3)
   println(d)
   println(r*r+s*s)
   def error(msg:String) = throw new Error(msg)
   error("message")
   //assert(-1>0,"-1<0")
+
 }

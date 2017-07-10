@@ -1,6 +1,6 @@
 package example
 
-import math.abs
+import scala.math.abs
 
 /**
   * Created by I330700 on 2017/6/10.

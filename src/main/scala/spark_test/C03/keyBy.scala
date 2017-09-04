@@ -8,7 +8,7 @@ object keyBy{
 val sc = new SparkContext(conf)						       //创建环境变量实例
     var str = sc.parallelize(Array("one","two","three","four","five"))          //创建数据集
     val str2 = str.keyBy(word => word.size)                              //设置配置方法
-    str2.foreach(println)                                               打印结果
+    str2.foreach(println)                                               //打印结果
   }
 }
 

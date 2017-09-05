@@ -4,7 +4,7 @@ package spark_test.Doc_Test.feature
   * Created by BFD-725 on 2017/9/5.
   */
 object word2vec extends App{
-  val spark = Spark.builder.master("local").appName("tfidf").getOrCreate()
+  val spark = Spark.builder.master("local").appName("word2vec").getOrCreate()
   val documentDF = spark.createDataFrame(Seq(
     "Hi I heard about Spark".split(" "),
     "I wish Java could use case classes".split(" "),

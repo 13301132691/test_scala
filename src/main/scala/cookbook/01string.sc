@@ -69,6 +69,10 @@ implicit class StringImprovement(s:String){
     case "0" | "zero" |""|" " => false
     case _ => true
   }
+  def -(i:Int) :Int = s match {
+    case "0" | "zero" |""|" " => 0 - i
+    case _ => 1 - i
+  }
 }
 
 implicit def asInt(b:Boolean):Int = b match{
@@ -78,3 +82,6 @@ implicit def asInt(b:Boolean):Int = b match{
 2 - false ==3 - true
 
 "".asBoolean
+"dd".asBoolean
+
+"dd" - 1

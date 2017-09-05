@@ -14,7 +14,7 @@ object tfIdf extends App{
   val tokenizer = new Tokenizer().setInputCol("sentence").setOutputCol("words")
   val wordsData = tokenizer.transform(sentenceData)
 
-  val hashingTF = new HTF().setInputCol("words").setOutputCol("rawFeatures").setNumFeatures(20)
+  val hashingTF = new HTF().setInputCol("words").setOutputCol("rawFeatures").setNumFeatures(5)
 
   val featurizedData = hashingTF.transform(wordsData)
   // alternatively, CountVectorizer can also be used to get term frequency vectors
@@ -23,5 +23,5 @@ object tfIdf extends App{
   val idfModel = idf.fit(featurizedData)
 
   val rescaledData = idfModel.transform(featurizedData)
-  rescaledData.select("label", "features").show()
+  val res = rescaledData.select("label", "features")
 }

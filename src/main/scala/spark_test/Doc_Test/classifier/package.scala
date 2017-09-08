@@ -31,7 +31,9 @@ package object classifier {
   type DTCM = org.apache.spark.ml.classification.DecisionTreeClassificationModel
   type RFC = org.apache.spark.ml.classification.RandomForestClassifier
   type RFCM = org.apache.spark.ml.classification.RandomForestClassificationModel
-
+  type GBT = org.apache.spark.ml.classification.GBTClassifier
+  type GBTM = org.apache.spark.ml.classification.GBTClassificationModel
+  type MLPC = org.apache.spark.ml.classification.MultilayerPerceptronClassifier
 
   /*object*/
   val Vecs = org.apache.spark.ml.linalg.Vectors

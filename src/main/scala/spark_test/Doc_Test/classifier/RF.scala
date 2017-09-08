@@ -25,7 +25,6 @@ object RF extends App{
   /*
   *
   * Test Error = 0.038461538461538436
-17/09/07 17:39:48 INFO SparkContext: Invoking stop() from shutdown hook
 Learned classification tree model:
 RandomForestClassificationModel (uid=rfc_b4394afd3fbb) with 10 trees
   Tree 0 (weight 1.0):

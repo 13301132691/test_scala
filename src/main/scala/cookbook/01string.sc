@@ -1,9 +1,10 @@
-
-
+//string 由富选择器自动转为Array[String]数组
 val s = "hello jax"
 s.foreach(println)
 s.getBytes().filter(_%2 ==0)
 "scala".drop(2).take(2).capitalize.toUpperCase
+
+//“”“”“”
 val sp =
   """
     |I am
@@ -16,6 +17,8 @@ val spp =
     |good
     |boy
   """.stripMargin.replaceAll("\n"," ")
+
+//s可指定变量，f指定格式，raw指定不转义
 val name = "jax"
 println(s"$name is a boy")
 val age = 33
@@ -31,7 +34,10 @@ val p = "sss".foreach(_.toUpper) //foreach returns unit
 
 val pattern = "[0-9]+".r
 val addr = "1n2n3n4n5n5n6n7n8n"
+
+//findFirstIn返回Option[String]
 val m1 = pattern.findFirstIn(addr)
+//findAllIn返回Iterator
 pattern.findAllIn(addr).toList.foreach(println)
 
 m1 match{
@@ -41,37 +47,39 @@ m1 match{
 
 "[0-9]".r replaceAllIn ("123 main", "x")
 
+//正则可直接作为匹配case
 val pa = """([0-9]+)\s([a-zA-Z]+)""".r
 val pa(num,str) = "100 banana"
 "100 banana" match{
   case pa(num,str) => println(s"there are $num $str")
 }
+
+//String后接（）自动调用apply
 "hello".charAt(3)
 "hello"(3)
 
+//隐式转换方法
 implicit class StringImprovements(s:String){
   def increment = s.map(c=>(c.toByte +1).toChar)
 }
 "HAL".increment
+//char可自动转为Int
 's'+1
 
-implicit class st(str:String){
-  def deng(b:Boolean) :Boolean = str match{
+implicit def stt(s:String) = st(s)
+case class st(str:String){
+  def ==(b:Boolean) :Boolean = str match{
     case "0" | "zero" |""|" " => false == b
     case _ => true == b
   }
 }
-st("") deng false
-"" deng false
+
+st("") == false
 
 implicit class StringImprovement(s:String){
   def asBoolean:Boolean = s match {
     case "0" | "zero" |""|" " => false
     case _ => true
-  }
-  def -(i:Int) :Int = s match {
-    case "0" | "zero" |""|" " => 0 - i
-    case _ => 1 - i
   }
 }
 
@@ -82,6 +90,3 @@ implicit def asInt(b:Boolean):Int = b match{
 2 - false ==3 - true
 
 "".asBoolean
-"dd".asBoolean
-
-"dd" - 1

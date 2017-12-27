@@ -66,3 +66,16 @@ def whist(testCondition: => Boolean)(codeBlock: => Unit){
     whist(testCondition)(codeBlock)
   }
 }
+val e = List(1,2,3,4)
+e match{
+  case list @ List(1,_*) => print(s"$list")
+}
+1 match {
+  case num if 1 to 5 contains num => println(num)
+}
+// 不用将matchy语句包含在{}中
+def sum(f:List[Int]): Int = f match {
+    case n :: rest => n +  sum(rest)
+    case Nil => 0
+  }
+sum(e)

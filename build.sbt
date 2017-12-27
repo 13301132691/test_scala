@@ -13,7 +13,9 @@ libraryDependencies += "com.typesafe" % "config" % "1.3.1"
 libraryDependencies += "com.github.scopt" % "scopt_2.10" % "3.3.0"
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0"
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.40"
-libraryDependencies += "com.typesafe.play" % "play-json_2.11" % "2.5.10"
+libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.7"
+libraryDependencies += "com.typesafe.akka" % "akka-actor_2.12" % "2.5.6"
+libraryDependencies += "net.liftweb" %% "lift-json" % "3.1.1"
 
 dependencyOverrides ++= Set(
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.5",

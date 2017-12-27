@@ -74,3 +74,4 @@ formatter3.format(12345.6789)
 val locale2 = new java.util.Locale("cn","CN")
 val formatter4 = java.text.NumberFormat.getCurrencyInstance(locale2)
 formatter4.format(123456.789)
+export PYTHONPATH=$PYTHONPATH:~/anaconda2/bin:/Users/didi/anaconda2/lib/site-packages/basicpy/:/Users/didi/anaconda2/lib/site-packages/basicpy/map:/Users/didi/anaconda2/lib/site-packages/basicpy/math:/Users/didi/anaconda2/lib/site-packages/basicpy/ml
